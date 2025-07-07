@@ -16,8 +16,8 @@ Follow these instructions to set up and run the project locally.
 
 1. **Clone the repository** (if you haven't already):
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/pankajpvk/Broker-Platform-App.git
+   cd Broker-Platform-App
 ### `npm install`
 then 
 
