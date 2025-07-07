@@ -1,10 +1,25 @@
-# Getting Started with Create React App
+# Broker Platform - React Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Broker platform application with login, navigation, and trade management capabilities.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+Follow these instructions to set up and run the project locally.
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm (v6 or higher) or yarn
+- Git
+
+### Installation
+
+1. **Clone the repository** (if you haven't already):
+   ```bash
+   git clone https://github.com/yourusername/your-repo-name.git
+   cd your-repo-name
+### `npm install`
+then 
 
 ### `npm start`
 
