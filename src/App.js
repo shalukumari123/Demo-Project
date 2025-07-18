@@ -13,7 +13,7 @@ import Positions from "./components/Positions";
 import BottomNav from "./components/BottomNav";
 import FabButton from "./components/FabButton";
 import OrderPad from "./components/OrderPad";
-import { Box, Alert } from "@mui/material";
+import { Box } from "@mui/material";
 
 const AppContent = () => {
   const { isLoggedIn, activeTab, error } = useContext(AppContext);

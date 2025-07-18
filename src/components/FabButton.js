@@ -1,11 +1,5 @@
 import React, { useState, useContext } from "react";
-import {
-  Fab,
-  Box,
-  SpeedDial,
-  SpeedDialAction,
-  SpeedDialIcon,
-} from "@mui/material";
+import { Box, SpeedDial, SpeedDialAction, SpeedDialIcon } from "@mui/material";
 import { ShoppingCart as BuyIcon, Sell as SellIcon } from "@mui/icons-material";
 import { AppContext } from "../context/AppContext";
 import { holdingsData, orderbookData, positionsData } from "../api/mockApi";
