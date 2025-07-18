@@ -11,7 +11,7 @@ const FabButton = () => {
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
+   // new changes done
   const getTopStock = () => {
     switch (activeTab) {
       case "holdings":
