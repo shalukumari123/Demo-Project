@@ -2,7 +2,7 @@ name: React Build & Test
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 jobs:
   build:
