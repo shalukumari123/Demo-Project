@@ -84,7 +84,8 @@ const BrokerLogin = () => {
   return (
     <Box sx={{ p: 4 }}>
       <Typography variant="h4" gutterBottom align="center">
-        Select Your Broker Name
+      {process.env.REACT_APP_WELCOME_TEXT || "Select Your Broker Name"}
+        
       </Typography>
 
       {/* Alert Snackbar */}
