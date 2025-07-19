@@ -84,7 +84,7 @@ const BrokerLogin = () => {
   return (
     <Box sx={{ p: 4 }}>
       <Typography variant="h4" gutterBottom align="center">
-        Select Your Required Broker Name
+        Select Your Broker Name
       </Typography>
 
       {/* Alert Snackbar */}
