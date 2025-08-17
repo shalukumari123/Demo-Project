@@ -17,8 +17,12 @@ jobs:
 
       - name: Build & Push Docker Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/react-app:latest .
-          docker push ${{ secrets.DOCKER_USERNAME }}/react-app:latest
+          IMAGE_NAME=${{ secrets.DOCKER_USERNAME }}/react-app
+          IMAGE_TAG=${{ github.sha }}
+          docker build -t $IMAGE_NAME:$IMAGE_TAG -t $IMAGE_NAME:latest .
+          docker push $IMAGE_NAME:$IMAGE_TAG
+          docker push $IMAGE_NAME:latest
+
   deploy:
     needs: build-and-push
     runs-on: ubuntu-latest
@@ -33,10 +37,3 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/react-app:latest
             docker rm -f react-app || true
             docker run -d --name react-app -p 80:3000 ${{ secrets.DOCKER_USERNAME }}/react-app:latest
-  test:
-    needs: deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Normal message
-        run: echo "Hello"
-      
