@@ -2,7 +2,8 @@ name: CI/CD React App
 
 on:
   push:
-    branches: [ "main" ]
+    branches: 
+      - "main"
 
 jobs:
   build-and-push:
@@ -18,3 +19,18 @@ jobs:
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/react-app:latest .
           docker push ${{ secrets.DOCKER_USERNAME }}/react-app:latest
+
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            docker pull ${{ secrets.DOCKER_USERNAME }}/react-app:latest
+            docker rm -f react-app || true
+            docker run -d --name react-app -p 80:3000 ${{ secrets.DOCKER_USERNAME }}/react-app:latest
